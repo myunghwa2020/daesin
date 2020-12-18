@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>레이아웃1</title>
+	<style type="text/css">
+	/* reset */
+	* {
+        margin:0;
+        padding:0;
+        }
+	a {
+        text-decoration:none;
+        color:#333;
+        }
+	ol,ul,li {
+        list-style:none;
+        }
+	.clearfix:after{
+        content:'';
+        display:block;
+        clear:both;
+        }
+
+	/* 레이아웃 */
+	#wrap {
+        width: 1200px;
+        height:700px;
+        margin:0 auto;
+        text-align: center;
+        }
+
+	/* header */
+	#header {
+        width:100%;
+        height: 100px;
+        }
+	#header .logo {
+        width:200px;
+        height:100px;
+        float:left;
+        background:#4cd2ff;
+        }
+	#header .nav {
+        width:1000px;
+        height:100px;
+        float:right;
+        background:#73b9ff;
+        }
+		
+	/* banner */
+	#banner {
+        width:100%;
+        height:300px;
+        background:#4ca6ff;
+        }  
+     
+
+	/* contents */
+	#contents {
+        width:100%;
+        height: 200px;
+        }
+	#contents > div{
+        width:33.33333%;
+        height:200px;
+        float:left;
+        }
+	#contents .cont1{ background:#0080ff;}
+	#contents .cont2{ background:#0040ff;}
+	#contents .cont3{ background:#0036d9;}
+	
+	/* footer */
+	#footer {
+        width:100%;
+        height: 100px;
+        }
+	#footer > div{
+        width:33.33333%;
+        height:100px;
+        float:left;
+        }
+	#footer .foot1{background:#0059b3;}
+	#footer .foot2{background:#00238c;}
+	#footer .foot3{background:#003366;}
+
+	</style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header" >
+            <h1 class="logo">로고</h1>
+            <nav class="nav">메뉴</nav>
+        </header><!--// header-->
+        
+        <section id="banner">이미지슬라이드 </section><!--//banner-->
+        
+        <section id="contents" class="clearfix">
+            <div class="cont1">공지사항/갤러</div> <!-- class="cont1" -->
+            <div class="cont2">배너</div>
+            <div class="cont3">바로가가</div>
+        </section><!--//contents-->
+        
+        <footer id="footer" class="clearfix">
+            <div class="foot1">로고</div>
+            <div class="foot2">Copyright</div>
+            <div class="foot3">sns</div>
+        </footer>  <!--//footer-->
+        
+    </div> <!-- //wrap -->
+	
+</body>
+</html>
