@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>개별서브메뉴 열리</title>
+	<style type="text/css">
+        /* reset */
+        * {
+            margin:0;
+            padding:0;
+            }
+        a {
+            text-decoration:none;
+            color:#333;
+            }
+        ol,ul,li {
+            list-style:none;
+            }
+        .clearfix:after{
+            content:'';
+            display:block;
+            clear:both;
+            }
+
+        /* 레이아웃 */
+        #wrap {
+            width: 1200px;
+            height:700px;
+            margin:0 auto;
+            color:#fff;
+            }
+
+        /* header */
+        #header {}
+        #header .logo {
+            width:200px;
+            height:100px;
+            float:left;
+            background:#4cd2ff;
+            }
+        /* menu */
+        #header .nav {
+            width:1000px;
+            height:100px;
+            float:right;
+            background:#73b9ff;
+            position:relative;
+            }
+        #header .nav > ul{
+            width:600px; 
+            float:right;
+            position:absolute;
+            right:0;
+            top:30px;
+            
+        }
+        .nav > ul >li{ /*바로밑에 자식에만 적용*/
+            float:left;
+            width:25%;
+            background:#fff; /*배경색은 li*/
+        }
+        .nav ul li a{
+            font-size:18px;
+            display:block;
+            text-align:center;
+            height: 40px;  /* 높이값은 a */
+            line-height: 40px;
+            font-weight: bold;
+            
+        }
+        .nav >ul> li:hover{ /*바로밑에 자식에만 적용*/
+            background:#f00; 
+        }
+        .nav >ul> li:hover> a{ /*바로밑에 자식에만 적용*/
+            color:#fff;
+        }
+        .nav ul li ul.submenu{
+            width:100%;
+            display:none;
+            
+        }
+        .nav ul li ul.submenu li{
+            background:#fff;
+        }
+        .nav ul li ul.submenu li:hover{
+            background:#f00;
+        }
+        .nav ul li ul.submenu li a{
+            font-size:16px;
+            font-weight: normal;
+            
+        }
+        .nav ul li ul.submenu li:hover a{
+            color:#fff;
+            font-weight: bold;
+        }
+
+        /* banner */
+        #banner {
+            width:100%;
+            height:300px;
+            background:#4ca6ff;
+            }   
+
+        /* contents */
+        #contents {}
+        #contents > div{
+            width:33.33333%;
+            height:200px;
+            float:left;
+            }
+        #contents .cont1{ background:#0080ff;}
+        #contents .cont2{ background:#0040ff;}
+        #contents .cont3{ background:#0036d9;}
+
+        /* footer */
+        #footer {}
+        #footer > div{
+            width:33.33333%;
+            height:100px;
+            float:left;
+            }
+        #footer .foot1{background:#0059b3;}
+        #footer .foot2{background:#00238c;}
+        #footer .foot3{background:#003366;}
+	</style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header" class="clearfix">
+            <h1 class="logo">로고</h1>
+            <nav class="nav">
+                <ul class="clearfix">
+					<li><a href="#">MENU-1</a>
+						<ul class="submenu"> <!-- ul.submenu>li*4>a -->
+							<li><a href="#">subMenu-1</a></li>
+							<li><a href="#">subMenu-2</a></li>
+							<li><a href="#">subMenu-3</a></li>
+							<li><a href="#">subMenu-4</a></li>
+						</ul>
+					</li>
+					<li><a href="#">MENU-2</a>
+						<ul class="submenu">
+							<li><a href="#">subMenu-1</a></li>
+							<li><a href="#">subMenu-2</a></li>
+							<li><a href="#">subMenu-3</a></li>
+							<li><a href="#">subMenu-4</a></li>
+						</ul>
+					</li>
+					<li><a href="#">MENU-3</a>
+						<ul class="submenu">
+							<li><a href="#">subMenu-1</a></li>
+							<li><a href="#">subMenu-2</a></li>
+							<li><a href="#">subMenu-3</a></li>
+							<li><a href="#">subMenu-4</a></li>
+						</ul>
+					</li>
+					<li><a href="#">MENU-4</a>
+						<ul class="submenu">
+							<li><a href="#">subMenu-1</a></li>
+							<li><a href="#">subMenu-2</a></li>
+							<li><a href="#">subMenu-3</a></li>
+							
+						</ul>
+					</li>
+				</ul>
+            </nav>
+        </header><!--// header-->
+        
+        <section id="banner">
+            슬라이드배너
+        </section><!--//banner-->
+        
+        <section id="contents" class="clearfix">
+            <div class="cont1">공지사항/갤러리	</div> <!-- class="cont1" -->
+            <div class="cont2">배너</div>
+            <div class="cont3">바로가가</div>
+        </section><!--//contents-->
+        
+        <footer id="footer" class="clearfix">
+            <div class="foot1">로고</div>
+            <div class="foot2">Copyright</div>
+            <div class="foot3">sns</div>
+        </footer>  <!--//footer-->
+        
+    </div> <!-- //wrap -->
+	<script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script>
+        $(function(){
+            $('.nav ul li a').mouseenter(function(){
+                $(this).next('.submenu').stop().slideDown(200)
+            })
+            $('.nav ul li').mouseleave(function(){
+                $(this).find('.submenu').stop().slideUp(200)
+            })
+        })
+    </script>
+</body>
+</html>
